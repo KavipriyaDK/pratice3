@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            margin: 0;
+            padding: 30px 15px;
+        }
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #0002;
+        }
+        h1 { text-align: center; color: #173b70; }
+        label {
+            display: block;
+            margin-top: 14px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #1769d2;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background: #104c9c; }
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Student Event Registration</h1>
+
+    <p><strong>Event:</strong> Tech Fest 2026</p>
+    <p><strong>Description:</strong>
+        Register for our technical events, workshops, and competitions.
+    </p>
+
+    <form id="registrationForm">
+        <label for="studentName">Student Name</label>
+        <input id="studentName" name="studentName"
+               type="text" required>
+
+        <label for="registerNumber">Register Number</label>
+        <input id="registerNumber" name="registerNumber"
+               type="text" required>
+
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+            <option>Other</option>
+        </select>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="eventDate">Event Date</label>
+        <input id="eventDate" name="eventDate"
+               type="date" required>
+
+        <button type="submit">Register Now</button>
+    </form>
+
+    <p id="message" role="status"></p>
+</div>
+
+<script>
+    document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("message").textContent =
+                "Registration successful! Thank you for registering.";
+            this.reset();
+        });
+</script>
+</body>
+</html>
